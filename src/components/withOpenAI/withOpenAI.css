@@ -1,0 +1,52 @@
+.api-demo-container {
+	justify-content: space-between;
+}
+
+.prompt-container {
+	display: flex;
+  flex-direction: column;
+	gap: 20px 20px;
+	min-width: 300px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.result-container {
+	display: flex;
+	min-width: 300px;
+	justify-content: center;
+	height: auto;
+	align-items: center;
+}
+
+.text-container {
+  margin: 1rem;
+  width: 300px;
+}
+
+.text-container h3 {
+  padding-bottom: 1rem;
+}
+
+.div-parent-responsive {
+  display: flex;
+  flex-direction: row;
+}
+
+.div-child-responsive {
+  width: 50%;
+}
+
+@media screen and (max-width: 902px) {
+  .div-parent-responsive {
+    flex-direction: column;
+  }
+
+  .div-child-responsive {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

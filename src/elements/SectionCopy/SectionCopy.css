@@ -1,0 +1,8 @@
+.section-copy-container {
+	width: 100%;
+	display: flex;
+};
+
+.section_copy {
+	max-width: 40rem;
+};

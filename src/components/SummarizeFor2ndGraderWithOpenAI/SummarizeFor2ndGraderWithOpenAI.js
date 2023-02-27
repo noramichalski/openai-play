@@ -1,0 +1,21 @@
+import SummarizeFor2ndGrader from '../SummarizeFor2ndGrader/SummarizeFor2ndGrader';
+import withOpenAI from '../withOpenAI/withOpenAI';
+
+
+const SummarizeFor2ndGraderWithOpenAI = withOpenAI(
+	SummarizeFor2ndGrader,
+	'text-davinci-003',
+	(api, prompt) =>
+		api.createCompletion({
+			model: 'text-davinci-003',
+			prompt,
+			temperature: 0.7,
+			max_tokens: 64,
+			top_p: 1.0,
+			frequency_penalty: 0.0,
+			presence_penalty: 0.0,
+		}
+	)
+);
+
+export default SummarizeFor2ndGraderWithOpenAI;
