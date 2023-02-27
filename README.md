@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## WIP -- As of now, to preview this project running you need an OpenAI TOKEN
 
-To sign up for a free account, go to the OpenAI API website and click the "Sign up for free" button. Follow the instructions to create an account and obtain an API key. Then replace the value of the REACT_APP_OPENAI_API_KEY variable in the .env file with your key.
+To sign up for a free account, go to the OpenAI API website and click the "Sign up for free" button. Follow the instructions to create an account and obtain an API key. Then add the token as the value of the REACT_APP_OPENAI_API_KEY variable in an .env file.
 
 ## Available Scripts
 
