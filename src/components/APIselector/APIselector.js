@@ -13,9 +13,9 @@ const APIselector = () => {
 			<ul className="api-list-container">
 				{
 					API_LIST.map(api => (
-						<li key={api.id} className="api-link">
-							<a href={`#${api.id}`}>
-								{api.text_title}
+						<li key={api.ID} className="api-link">
+							<a href={`#${api.ID}`}>
+								{api.TEXT_TITLE}
 							</a>
 						</li>
 					))

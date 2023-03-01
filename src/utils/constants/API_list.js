@@ -2,19 +2,19 @@ import { TEXT } from './text.constants';
 
 export const API_LIST = [
 	{
-		id: "image_generator",
-		text_title: TEXT.SECTION_IMAGE_GENERATOR_TITLE,
+		ID: "IMAGE_GENERATOR",
+		TEXT_TITLE: TEXT.IMAGE_GENERATOR.TITLE,
 	},
 	{
-		id: "summarize_for_2nd_grader",
-		text_title: TEXT.SECTION_SUMMARIZE_TITLE,
+		ID: "SUMMARIZE",
+		TEXT_TITLE: TEXT.SUMMARIZE.TITLE
 	},
 	{
-		id: "api_3",
-		text_title: "API 3"
+		ID: "API_3",
+		TEXT_TITLE: "API 3"
 	},
 	{
-		id: "api_4",
-		text_title: "API 4"
+		ID: "API_4",
+		TEXT_TITLE: "API 4"
 	}
 ];

@@ -1,9 +1,15 @@
-import ImageGenerator from '../ImageGenerator/ImageGenerator';
-import withOpenAI from '../withOpenAI/withOpenAI';
+import { API_LIST } from '../../utils/constants/API_list';
 
+// import ImageGenerator from '../ImageGenerator/ImageGenerator';
+import withOpenAI from '../withOpenAI/withOpenAI';
+import ApiDemoSection from '../ApiDemoSection/ApiDemoSection';
+
+
+const apiName = API_LIST[0].ID;
 
 const ImageGeneratorWithOpenAI = withOpenAI(
-	ImageGenerator,
+	ApiDemoSection,
+	apiName,
 	null,
 	(api, prompt) =>
 		api.createImage({

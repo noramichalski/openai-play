@@ -1,9 +1,14 @@
-import SummarizeFor2ndGrader from '../SummarizeFor2ndGrader/SummarizeFor2ndGrader';
-import withOpenAI from '../withOpenAI/withOpenAI';
+import { API_LIST } from '../../utils/constants/API_list';
 
+// import SummarizeFor2ndGrader from '../SummarizeFor2ndGrader/SummarizeFor2ndGrader';
+import withOpenAI from '../withOpenAI/withOpenAI';
+import ApiDemoSection from '../ApiDemoSection/ApiDemoSection';
+
+const apiName = API_LIST[1].ID;
 
 const SummarizeFor2ndGraderWithOpenAI = withOpenAI(
-	SummarizeFor2ndGrader,
+	ApiDemoSection,
+	apiName,
 	'text-davinci-003',
 	(api, prompt) =>
 		api.createCompletion({
