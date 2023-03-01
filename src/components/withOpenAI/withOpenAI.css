@@ -20,11 +20,13 @@
 	justify-content: center;
 	height: auto;
 	align-items: center;
+  margin: 2rem;
 }
 
 .text-container {
   margin: 1rem;
   width: 300px;
+  text-align: center;
 }
 
 .text-container h3 {
