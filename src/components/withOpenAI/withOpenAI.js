@@ -34,7 +34,7 @@ const withOpenAI = (WrappedComponent, apiModel, apiFunction, inputLabel) => {
 				}
 
 			} catch (error) {
-				console.error(error.message);
+				console.error(error);
 			}
 
 			setIsLoading(false);
