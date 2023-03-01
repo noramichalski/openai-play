@@ -1,17 +1,28 @@
 import LoadingGif from '../../elements/LoadingGif/LoadingGif';
 import { TEXT } from '../../utils/constants/text.constants';
 
-const ResultLoader = ({output, isLoading, prompt, resultType, showInitialResultContainer, error}) => {
+const ResultLoader = ({
+	output,
+	isLoading,
+	prompt,
+	resultType,
+	showInitialResultContainer,
+	isError,
+	isPaused }) => {
 
 	return (
 		<div className="result-container div-child-responsive">
 			{
 				/* Show initial result placeholder: */
-				showInitialResultContainer && <div className="text-container">Result will show here</div>
+				showInitialResultContainer &&
+				<div className="text-container">
+					{TEXT.RESULT_PLACEHOLDER}
+				</div>
 			}
 			{
 				/* Show Loading gif: */
-				isLoading && <LoadingGif />
+				isLoading && !isError && !isPaused &&
+				<LoadingGif />
 			}
 			{
 				/* Load Image Generator API result: */
@@ -27,7 +38,18 @@ const ResultLoader = ({output, isLoading, prompt, resultType, showInitialResultC
 				</div>
 			}
 			{
-				error && <div className="text-container">Error happened</div>
+				/* Show error: */
+				isError && 
+				<div className="text-container">
+					{TEXT.ERROR}
+				</div>
+			}
+			{
+				/* Show interruption: */
+				isPaused && 
+				<div className="text-container">
+					{TEXT.PAUSED}
+				</div>
 			}
 		</div>
 	);

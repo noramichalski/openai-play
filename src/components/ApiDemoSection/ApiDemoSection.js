@@ -10,14 +10,15 @@ import ResultLoader from '../ResultLoader/ResultLoader';
 
 const ApiDemoSection = ({
 	apiName,
-	handleInputChange,
 	executeAPI,
+	handleInputChange,
+	isError,
+	isLoading,
+	isPaused,
 	prompt,
 	output,
-	isLoading,
-	error,
-	showInitialResultContainer
-}) => {
+	resultType,
+	showInitialResultContainer }) => {
 
 	return (
 		<section id={apiName} className="section-top-border">
@@ -48,11 +49,12 @@ const ApiDemoSection = ({
 					</div>
 				</form>
 				<ResultLoader
+					isError={isError}
 					isLoading={isLoading}
+					isPaused={isPaused}
 					output={output}
 					prompt={prompt}
-					resultType="image"
-					error={error}
+					resultType={resultType}
 					showInitialResultContainer={showInitialResultContainer}
 				/>
 			</div>

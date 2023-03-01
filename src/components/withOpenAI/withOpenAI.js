@@ -2,7 +2,12 @@ import { Configuration, OpenAIApi } from 'openai';
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
-const withOpenAI = (WrappedComponent, apiName, apiModel, apiFunction) => {
+const withOpenAI = (
+	WrappedComponent,
+	apiName,
+	resultType,
+	apiModel,
+	apiFunction ) => {
 
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY
@@ -14,7 +19,11 @@ const withOpenAI = (WrappedComponent, apiName, apiModel, apiFunction) => {
     const [output, setOutput] = useState("");
 		const [showInitialResultContainer, setShowInitialResultContainer] = useState(true);
 
-    const { mutate, isLoading, error } = useMutation(
+    const {
+			mutate,
+			isLoading,
+			isError,
+			isPaused } = useMutation(
       async (prompt) => {
         const response = await apiFunction(openai, prompt);
 
@@ -44,14 +53,16 @@ const withOpenAI = (WrappedComponent, apiName, apiModel, apiFunction) => {
 
     return (
       <WrappedComponent
+				apiModel={apiModel}
 				apiName={apiName}
-        handleInputChange={handleInputChange}
         executeAPI={executeAPI}
+				handleInputChange={handleInputChange}
+				isError={isError}
+				isLoading={isLoading}
+				isPaused={isPaused}
+				output={output}
         prompt={prompt}
-        output={output}
-        isLoading={isLoading}
-        apiModel={apiModel}
-        error={error}
+				resultType={resultType}
 				showInitialResultContainer={showInitialResultContainer}
       />
     );

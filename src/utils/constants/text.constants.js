@@ -14,5 +14,8 @@ export const TEXT = {
 		PLACEHOLDER: "Text to summarize",
 		RESULT_TITLE: "Summary:",
 	},
-	COPYRIGHT: "copyright Ⓒ Nora Michalski (2023)"
+	RESULT_PLACEHOLDER: "The result will show here",
+	COPYRIGHT: "copyright Ⓒ Nora Michalski (2023)",
+	ERROR: "An error occured ",
+	PAUSED: "Looks like the connection got interrupted. Please, check your network and try it, again!"
 };

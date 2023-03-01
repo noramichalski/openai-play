@@ -1,6 +1,5 @@
 import { API_LIST } from '../../utils/constants/API_list';
 
-// import SummarizeFor2ndGrader from '../SummarizeFor2ndGrader/SummarizeFor2ndGrader';
 import withOpenAI from '../withOpenAI/withOpenAI';
 import ApiDemoSection from '../ApiDemoSection/ApiDemoSection';
 
@@ -9,10 +8,11 @@ const apiName = API_LIST[1].ID;
 const SummarizeFor2ndGraderWithOpenAI = withOpenAI(
 	ApiDemoSection,
 	apiName,
-	'text-davinci-003',
+	"text",
+	"text-davinci-003",
 	(api, prompt) =>
 		api.createCompletion({
-			model: 'text-davinci-003',
+			model: "text-davinci-003",
 			prompt,
 			temperature: 0.7,
 			max_tokens: 64,
